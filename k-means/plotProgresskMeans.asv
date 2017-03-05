@@ -1,4 +1,4 @@
-function plotProgresskMeans(X, centroids, previous, idx, K, ii,max_iters)
+function plotProgresskMeans(X, centroids, previous, idx, K, i,max_iters)
 
 %figure
 
@@ -6,7 +6,7 @@ function plotProgresskMeans(X, centroids, previous, idx, K, ii,max_iters)
 
  figure
  hold on ;grid on;
- view(30,10);
+ %view(30,10);
  plotDataPoints(X, idx, K);
     
 
@@ -43,9 +43,8 @@ hold off;
 % end
 
 
-title(sprintf('Iteration number %d', ii))
-str1 = [num2str(ii) '.png'];
-str1;
-print(gcf,'-dpng',str1);
+title(sprintf('Iteration number %d', i))
+str1 = 
+print(gcf,'-dpng','')
 end
 

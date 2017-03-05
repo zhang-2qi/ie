@@ -10,7 +10,7 @@ if plot_progress
     figure;
     hold on;
 end
-grid on;
+
 % Initialize values
 [m n] = size(X);
 K = size(initial_centroids, 1);%KÊÇÊýÁ¿
@@ -39,20 +39,19 @@ for i=1:max_iters
     
     % Optionally, plot progress here
     if plot_progress
-        plotProgresskMeans(X_random, centroids, previous_centroids, idx, K, i,max_iters);
+        handA = plotProgresskMeans(X_random, centroids, previous_centroids, idx, K, i,max_iters);
         previous_centroids = centroids;
        % fprintf('Press enter to continue.\n');
-        %pause;
+        pause;
     end
-%     if(i~=1)
-%    % delete(get(handB,'HandleVisibility')); 
-%     set(handB,'HandleVisibility','off');
-%     end;
-%     handB=handA;
+    if(i~=1)
+    delete(get(handB,'HandleVisibility')); 
+    set(handB,'HandleVisibility',off);
+    end;
+    handB=handA;
 
     % Given the memberships, compute new centroids
     centroids = computeCentroids(X_random, idx, K);
-    %hold off;
 end
 
 
