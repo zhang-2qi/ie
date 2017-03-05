@@ -1,10 +1,11 @@
-function plotProgresskMeans(X, centroids, previous, idx, K, i)
+function plotProgresskMeans(X, centroids, previous, idx, K, i,max_iters)
 
-
+%figure
 hold on;
 % Plot the examples
+if(i==max_iters)
 plotDataPoints(X, idx, K);
-
+end 
 % Plot the centroids as black x's
 % plot3(centroids(:,1), centroids(:,2),centroids(:,3), 'x', ...
 %      'MarkerEdgeColor','k', ...
